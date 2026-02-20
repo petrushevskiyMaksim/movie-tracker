@@ -1,3 +1,5 @@
+import { NowInCinema } from "@/src/widget/NowInCinema";
+
 export default function Home() {
     return (
         <>
@@ -8,7 +10,9 @@ export default function Home() {
                     aspectRatio: '426/311',
                 }}
             />
-            <main className=''></main>
+            <main className=''>
+                <NowInCinema />
+            </main>
         </>
     );
 }

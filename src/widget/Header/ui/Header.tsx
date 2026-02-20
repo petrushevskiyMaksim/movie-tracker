@@ -84,7 +84,7 @@ export const Header = memo((props: HeaderProps) => {
 
                 <SocialList
                     items={socialIcons}
-                    className='flex items-center gap-4'
+                    className='flex items-center 2xl:justify-between gap-4'
                     itemClassName='text-foreground/20 hover:text-foreground'
                 />
             </div>

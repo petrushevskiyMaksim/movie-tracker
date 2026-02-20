@@ -2,7 +2,7 @@ import { memo } from 'react';
 import IconLogo from '@/public/logo.svg';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Text } from '../../TypographyP/Text';
+import { Text } from '../../Typography/Text';
 
 interface AppLogoProps {
     className?: string;
