@@ -10,7 +10,7 @@ interface TitleProps {
 const levelStyles = {
     1: 'text-4xl font-bold',
     2: 'text-[32px] md:text-[40px] 2xl:text-[65px] font-black leading-[1]',
-    3: 'text-2xl font-semibold',
+    3: 'text-base 2xl:text-lg font-bold',
     4: 'text-xl font-medium',
     5: 'text-lg font-medium',
     6: 'text-base font-medium',
