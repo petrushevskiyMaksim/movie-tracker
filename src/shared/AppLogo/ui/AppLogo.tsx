@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import IconLogo from '@/public/logo.svg';
-import { TypographyP } from '../../TypographyP';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { Text } from '../../TypographyP/Text';
 
 interface AppLogoProps {
     className?: string;
@@ -12,11 +12,11 @@ export const AppLogo = memo((props: AppLogoProps) => {
     const { className } = props;
 
     return (
-        <Link href='/' className={cn(className, 'group')}>
-            <IconLogo className='w-4 h-4 group-hover:text-blue-400 transition-colors duration-200' />
-            <TypographyP className='font-extrabold text-lg'>
+        <Link href='/' className={cn(className, 'hover:opacity-80')}>
+            <IconLogo className='w-4 h-4 2xl:w-6 2xl:h-6' />
+            <Text className='font-extrabold text-lg  2xl:text-[25px]'>
                 <span className='text-blue-700'>Kino</span>area
-            </TypographyP>
+            </Text>
         </Link>
     );
 });

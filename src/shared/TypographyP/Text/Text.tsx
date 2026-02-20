@@ -5,7 +5,7 @@ interface TypographyPProps {
     children: ReactNode;
 }
 
-export function TypographyP(props: TypographyPProps) {
+export function Text(props: TypographyPProps) {
     const { children, className = '' } = props;
     return <p className={className}>{children}</p>;
 }

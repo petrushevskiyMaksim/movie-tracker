@@ -1,11 +1,14 @@
-import { Header } from '@/app/components/widget/Header';
-
 export default function Home() {
     return (
-        <div className='max-w-[424px] px-7 pt-3 pb-7 mx-auto'>
-            <main>
-                <Header className='flex justify-between' />
-            </main>
-        </div>
+        <>
+            <div
+                className='fixed inset-0 -z-10 w-full bg-cover bg-top bg-no-repeat opacity-25 lg:bg-contain'
+                style={{
+                    backgroundImage: "url('/image/bg-home.png')",
+                    aspectRatio: '426/311',
+                }}
+            />
+            <main className=''></main>
+        </>
     );
 }

@@ -9,8 +9,8 @@ export interface Item {
 
 interface SocialListProps {
     className?: string;
-    linkClassName?: string;
     itemClassName?: string;
+    linkClassName?: string;
     items: Item[];
 }
 
