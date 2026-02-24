@@ -11,16 +11,15 @@ interface AppLinkProps {
 
 export const AppLink = (props: AppLinkProps) => {
     const { className = '', href, children } = props;
-
     const pathname = usePathname();
-    console.log(pathname);
+    const isActive = pathname === href;
 
     return (
         <Link
             className={cn(
-                'px-2 py-2 rounded-sm hover:bg-primary-foreground/80',
+                '',
                 className,
-                pathname === href ? 'bg-primary-foreground' : ''
+                isActive ? 'bg-primary-foreground' : ''
             )}
             target='_blank'
             href={href}

@@ -1,4 +1,6 @@
-import { memo } from 'react';
+'use client';
+
+import { memo, useState } from 'react';
 import { AppLogo } from '@/src/shared/AppLogo';
 import BurgerIcon from '@/public/burger.svg';
 import SearchIcon from '@/public/search.svg';
@@ -11,6 +13,7 @@ import { Item } from '@/src/shared/SocialList/ui/SocialList';
 import { cn } from '@/lib/utils';
 import { Category, Navigation } from '@/src/features/Navigation';
 import { Button } from '@/components/ui';
+import { BurgerMenu } from '@/src/shared/BurgerMenu/ui/BurgerMenu';
 
 interface HeaderProps {
     className?: string;
@@ -75,13 +78,36 @@ const categories: Category[] = [
 
 export const Header = memo((props: HeaderProps) => {
     const { className = '' } = props;
+    const [isOpenMenu, setIsOpenMenu] = useState(false);
+    console.log(isOpenMenu);
+
+    const handleBurgerOpen = () => {
+        setIsOpenMenu(true);
+    };
+
+    const handleBurgerClose = () => {
+        setIsOpenMenu(false);
+    };
 
     return (
         <header className={cn(className)}>
+            <BurgerMenu
+                onClose={handleBurgerClose}
+                className={cn(
+                    `absolute -top-full p-8 bg-background/95 flex-col text-center justify-center items-center `,
+                    isOpenMenu
+                        ? 'flex translate-y-0 top-0 left-0 right-0 z-10'
+                        : 'hidden -translate-y-full'
+                )}
+            />
             <div className='flex area-left gap-1 2xl:area-button-search'>
-                <Button className='h-7 w-7 p-1 cursor-pointer md:hidden'>
+                <Button
+                    onClick={handleBurgerOpen}
+                    className='h-7 w-7 p-1 cursor-pointer md:hidden'
+                >
                     <BurgerIcon />
                 </Button>
+
                 <Button className='w-7 md:w-10 lg:w-10.5 2xl:w-13 h-7 md:h-9.5 lg:h-10.5 2xl:h-13 p-1 cursor-pointer'>
                     <SearchIcon width={15} height={15} />
                 </Button>

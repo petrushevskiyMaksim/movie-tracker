@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
-import { NavigationItem } from './NavigationItem';
+import { AppLink } from '@/src/shared/AppLink';
 
 export interface Category {
     id: number;
@@ -11,26 +11,41 @@ export interface Category {
 }
 
 interface CategoryListProps {
+    categories: Category[];
     className?: string;
     classNameList?: string;
     classNameItem?: string;
-    categories: Category[];
+    classNameLink?: string;
 }
 
 export const Navigation = (props: CategoryListProps) => {
-    const { className = '', categories, classNameList, classNameItem } = props;
-    const [isActive, setIsActive] = useState();
+    const {
+        className = '',
+        categories,
+        classNameList,
+        classNameItem,
+        classNameLink,
+    } = props;
 
     return (
         <nav className={cn('', className)}>
             <ul className={classNameList}>
                 {categories.map((category) => {
                     return (
-                        <NavigationItem
-                            key={`Category ${category.id}`}
-                            item={category}
-                            className={cn('', className)}
-                        />
+                        <li
+                            key={`Navigation key ${category.id}`}
+                            className={cn('', classNameItem)}
+                        >
+                            <AppLink
+                                className={cn(
+                                    'px-2 py-2 rounded-sm hover:bg-primary-foreground/80',
+                                    classNameLink
+                                )}
+                                href={category.href}
+                            >
+                                {category.name}
+                            </AppLink>
+                        </li>
                     );
                 })}
             </ul>

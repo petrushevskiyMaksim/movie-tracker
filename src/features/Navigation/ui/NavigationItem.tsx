@@ -13,7 +13,9 @@ export const NavigationItem = (props: NavigationItemProps) => {
     return (
         <li className={cn('', className)}>
             <AppLink
-                className={cn('')}
+                className={cn(
+                    'px-2 py-2 rounded-sm hover:bg-primary-foreground/80'
+                )}
                 href={item.href}
             >
                 {item.name}
