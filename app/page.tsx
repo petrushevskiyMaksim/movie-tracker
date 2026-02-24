@@ -1,4 +1,5 @@
-import { NowInCinema } from "@/src/widget/NowInCinema";
+import { AppLink } from '@/src/shared/AppLink';
+import { NowInCinema } from '@/src/widget/NowInCinema';
 
 export default function Home() {
     return (

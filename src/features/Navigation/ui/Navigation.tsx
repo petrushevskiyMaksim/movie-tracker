@@ -1,9 +1,13 @@
+'use client';
+
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
+import { useState } from 'react';
+import { NavigationItem } from './NavigationItem';
 
 export interface Category {
     id: number;
     name: string;
+    href: string;
 }
 
 interface CategoryListProps {
@@ -13,22 +17,20 @@ interface CategoryListProps {
     categories: Category[];
 }
 
-export const CategoryList = (props: CategoryListProps) => {
+export const Navigation = (props: CategoryListProps) => {
     const { className = '', categories, classNameList, classNameItem } = props;
+    const [isActive, setIsActive] = useState();
 
     return (
         <nav className={cn('', className)}>
             <ul className={classNameList}>
                 {categories.map((category) => {
                     return (
-                        <li
+                        <NavigationItem
                             key={`Category ${category.id}`}
-                            className={cn('', classNameItem)}
-                        >
-                            <Link target='_blank' href={'#'}>   
-                                {category.name}
-                            </Link>
-                        </li>
+                            item={category}
+                            className={cn('', className)}
+                        />
                     );
                 })}
             </ul>

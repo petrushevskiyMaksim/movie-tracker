@@ -53,14 +53,11 @@ export const FilmCard = (props: FilmCardProps) => {
                 {isHovered && (
                     <div
                         className='absolute inset-0 flex justify-center items-center
-                        bg-secondary/65 animate-in fade-in duration-300
-                        data-[leave=true]:animate-out data-[leave=true]:fade-out'
-                        data-leave={!isHovered}
+                        bg-secondary/65 animate-in fade-in duration-300'
                     >
                         <Button
                             className='font-bold text-sm cursor-pointer hover:bg-primary hover:text-primary-foreground
-                            animate-in zoom-in-50 duration-500
-                            data-[leave=true]:animate-out data-[leave=true]:zoom-out-50'
+                            animate-in zoom-in-50 duration-500'
                         >
                             Карточка фильма
                         </Button>

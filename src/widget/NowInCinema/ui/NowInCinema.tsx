@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { Title } from '@/src/shared/Typography/Title/Title';
 import BurgerIcon from '@/public/burger.svg';
 import { FilmCard } from '@/src/entities/film';
-import { Category, CategoryList } from '@/src/features/CategoryList';
+import { Category, Navigation } from '@/src/features/Navigation';
 
 interface NowInCinemaProps {
     className?: string;
@@ -13,30 +13,37 @@ const categories: Category[] = [
     {
         id: 1,
         name: 'Все',
+        href: '#',
     },
     {
         id: 2,
         name: 'Боевики',
+        href: '#',
     },
     {
         id: 3,
         name: 'Приключения',
+        href: '#',
     },
     {
         id: 4,
         name: 'Комедии',
+        href: '#',
     },
     {
         id: 5,
         name: 'Фантастика',
+        href: '#',
     },
     {
+        href: '#',
         id: 6,
         name: 'Триллеры',
     },
     {
         id: 7,
         name: 'Драма',
+        href: '#',
     },
 ];
 
@@ -56,12 +63,13 @@ export const NowInCinema = (props: NowInCinemaProps) => {
                 </Button>
                 {/* список жанров */}
             </div>
-            <CategoryList
+            <Navigation
                 categories={categories}
-                className='hidden md:block md:mb-7'
+                className='hidden md:block md:mb-7 '
                 classNameList={
                     'flex flex-wrap gap-x-6 gap-y-3 text-[15px] tracking-normal font-bold'
                 }
+                classNameItem='opacity-40 hover:opacity-100 transition-opacity duration-300'
             />
 
             <div className='grid grid-cols-2 xs:grid-cols-3 lg:grid-cols-4 gap-x-3 2xl:gap-x-6 gap-y-5 2xl:gap-y-6'>

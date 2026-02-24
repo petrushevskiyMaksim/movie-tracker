@@ -9,7 +9,7 @@ import TwitterIcon from '@/public/twitter.svg';
 import GoogleIcon from '@/public/google.svg';
 import { Item } from '@/src/shared/SocialList/ui/SocialList';
 import { cn } from '@/lib/utils';
-import { Category, CategoryList } from '@/src/features/CategoryList';
+import { Category, Navigation } from '@/src/features/Navigation';
 import { Button } from '@/components/ui';
 
 interface HeaderProps {
@@ -39,30 +39,37 @@ const categories: Category[] = [
     {
         id: 1,
         name: 'Афиша',
+        href: '/affiche',
     },
     {
         id: 2,
         name: 'Медиа',
+        href: '/media',
     },
     {
         id: 3,
         name: 'Фильмы',
+        href: '/films',
     },
     {
         id: 4,
         name: 'Актёры',
+        href: '/actors',
     },
     {
         id: 5,
         name: 'Новости',
+        href: '/news',
     },
     {
         id: 6,
         name: 'Подборки',
+        href: '/collections',
     },
     {
         id: 7,
         name: 'Категории',
+        href: '/categories',
     },
 ];
 
@@ -94,7 +101,7 @@ export const Header = memo((props: HeaderProps) => {
             >
                 Войти
             </Button>
-            <CategoryList
+            <Navigation
                 categories={categories}
                 className='hidden md:block area-nav justify-self-center 2xl:self-center'
                 classNameList='flex gap-8 font-bold text-xs  2xl:text-lg'
